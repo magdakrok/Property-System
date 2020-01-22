@@ -1,0 +1,49 @@
+<div class="container d-flex justify-content-center align-items-center col-sm-12 pt-5">
+  <div class="row justify-content-md-center  col-sm-12">
+    <div class=" col-sm-7 card-header bg-dark text-white d-flex ">
+      <div class=" col-sm-9 pt-2">
+        <p>List of offers</p>
+      </div>
+      <div class="col-sm-3  pt-1">
+        <button class="btn btn-danger" (click)="deleteAllOffers()">
+          Delete All
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="card text-center">
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">City</th>
+                <th scope="col">Street</th>
+                <th scope="col">Property</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let offers of offer">
+              <tr>
+                <td>{{offers.city}}</td>
+                <td>{{offers.street}}</td>
+                <td>{{offers.property}}</td>
+                <td>
+                  <button class="btn btn-success mr-1" [routerLink]="['/update/', offers.id]">
+                    Edit
+                  </button>
+                  <button class="btn btn-success mr-1" [routerLink]="['/get/', offers.id]">
+                    View more
+                  </button>
+                  <button class="btn btn-danger" (click)="deleteOne(offers.id)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import { CreateOfferComponent } from '../components/create/createOffer.component';
+import { Offer} from '../models/Offer';
+import { Key } from 'protractor';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ConnestionService {
+
+ 
+
+  constructor(private httpClient: HttpClient) { }
+
+
+  create(offer){
+    return this.httpClient.post<{[id: string]: Offer}>(`https://space-tourist-flights.firebaseio.com/Offer.json`, offer);
+  }
+
+  update(offer, key: number){
+    return this.httpClient.put(`https://space-tourist-flights.firebaseio.com/Offer/${key}.json`, offer);
+    
+  }
+
+
+  getAll(){
+    
+      return this.httpClient.get<{[key: string]: Offer}>('https://space-tourist-flights.firebaseio.com/Offer.json').pipe(
+        map(responseData =>{
+          //(responseData: {[key: string]: Offer}) => {
+          const dataArray: Offer[] = [];
+          for(const key in responseData){
+            if(responseData.hasOwnProperty(key)){
+              dataArray.push({...responseData[key], id:key});
+            }
+          }
+          return dataArray;
+        })
+      );
+  }
+
+  getOne(id: number){
+    return this.httpClient.get(`https://space-tourist-flights.firebaseio.com/Offer/${id}.json`);
+  }
+
+  deleteAll(){
+    return this.httpClient.delete(`https://space-tourist-flights.firebaseio.com/Offer.json`);
+  }
+
+  deleteOne(id: number){
+    return this.httpClient.delete(`https://space-tourist-flights.firebaseio.com/Offer/${id}.json`);
+  }
+
+  
+}

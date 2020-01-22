@@ -1,0 +1,49 @@
+<div class="container d-flex justify-content-center align-items-center col-md-10 pt-5">
+    <div class="row justify-content-md-center col-md-10">
+        <div class=" col-md-10 card-header bg-dark text-white d-flex ">
+            Update offer
+        </div>
+        <div class=" card col-md-10 ">
+            <div class="card-body">
+                <div class="form">
+                    <div class="form-group">
+                        Id
+                        <input type="text" name="id" [(ngModel)]="offer.id" class="form-control" hidden placeholder="offer.id">
+                    </div>
+                    <div class="form-group">
+                        City
+                        <input type="text" name="city" [(ngModel)]="offer.city" class="form-control" placeholder="offer.city" autofocus>
+                    </div>
+                    <div class="form-group">
+                        Street
+                        <input type="text" name="street" [(ngModel)]="offer.street" class="form-control" placeholder="offer.street" autofocus>
+                    </div>
+                    <div class="form-group">
+                        Property
+                        <input type="text" name="property" [(ngModel)]="offer.property" class="form-control" placeholder="offer.property" autofocus>
+                    </div>
+                    <div class="form-group">
+                        Apartment
+                        <input type="text" name="apartment" [(ngModel)]="offer.apartment" class="form-control" placeholder="offer.apartment" autofocus>
+                    </div>
+                    <div class="form-group">
+                        Price
+                        <input type="number" name="price" [(ngModel)]="offer.price" class="form-control" placeholder="offer.price" autofocus>
+                    </div>
+                    <div class="form-group">
+                        Type
+                        <input type="number" name="price" [(ngModel)]="offer.type" class="form-control" placeholder="offer.type" autofocus>
+                    </div>
+                    <div class="form-group">
+                        Description
+                        <input type="text" name="description" [(ngModel)]="offer.description" class="form-control" placeholder="offer.descrition"
+                            autofocus>
+                    </div>
+                    <button class="btn btn-success btn-block" (click)="updateOffer()">
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
