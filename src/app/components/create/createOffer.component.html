@@ -1,51 +1,45 @@
-<div class="container d-flex justify-content-center align-items-center col-md-10 pt-5">
-    <div class="row justify-content-md-center col-md-10">
-        <div class=" col-md-10 card-header bg-dark text-white d-flex ">
-            Add a new offer
-        </div>
-        <div class=" card col-md-10 ">
-            <div class="card-body">
-                <div class="form">
-                    <div class="form-group">
-                        ID
-                        <input type="text" name="city" [(ngModel)]="offer.id" class="form-control"  hidden autofocus>
-                    </div>
-                    <div class="form-group">
-                        City
-                        <input type="text" name="city" [(ngModel)]="offer.city" class="form-control" autofocus>
-                    </div>
-
-                    <div class="form-group">
-                        Street
-                        <input type="text" name="street" [(ngModel)]="offer.street" class="form-control" autofocus>
-                    </div>
-                    <div class="form-group">
-                        Property
-                        <input type="text" name="prperty" [(ngModel)]="offer.property" class="form-control" autofocus>
-                    </div>
-                    <div class="form-group">
-                        Apartment
-                        <input type="text" name="apartment" [(ngModel)]="offer.apartment" class="form-control"
-                            autofocus>
-                    </div>
-                    <div class="form-group">
-                        Price
-                        <input type="number" name="price" [(ngModel)]="offer.price" class="form-control" autofocus>
-                    </div>
-                    <div class="form-group">
-                        Type
-                        <input type="number" name="price" [(ngModel)]="offer.type" class="form-control" autofocus>
-                    </div>
-                    <div class="form-group">
-                        Description
-                        <input type="text" name="description" [(ngModel)]="offer.description" class="form-control"
-                            autofocus>
-                    </div>
-                    <button class="btn btn-success btn-block" (click)="saveNewOffer()">
-                        SAVE
-                    </button>
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Add Offer</span>
+        <form (ngSubmit) = "saveNewOffer()" class ="col s6">
+            <div class="column">
+                <div class="input-field col s6">
+                   <input type="text" name="city" [(ngModel)]="offer.city" class="form-control" autofocus>
+                   <label>City</label>
                 </div>
+                <div class="input-field col s6">
+                   <input type="text" name="street" [(ngModel)]="offer.street" class="form-control" autofocus>
+                   <label>Street</label>
+                </div>
+                
+                <div class="input-field col s6">
+                   <input type="text" name="prperty" [(ngModel)]="offer.property" class="form-control" autofocus>
+                   <label>Property</label>
+                </div>
+                
+                <div class="input-field col s6">
+                    <input type="text" name="apartment" [(ngModel)]="offer.apartment" class="form-control" autofocus>
+                    <label>Apartment</label>
+                </div>
+                
+                <div class="input-field col s6">
+                    <input type="text" name="price" [(ngModel)]="offer.price" class="form-control" autofocus>
+                    <label>Price</label>
+                </div>
+                
+                <div class="input-field col s6">
+                    <input type="text" name="price" [(ngModel)]="offer.type" class="form-control" autofocus>
+                    <label>Type</label>
+                </div>
+                
+                <div class="input-field col s6">
+                    <input type="text" name="description" [(ngModel)]="offer.description" class="form-control" autofocus>
+                    <label>Description</label>
+                </div>
+                <input type="submit" value="Submit" class="btn">
             </div>
-        </div>
-    </div>
+
+        
+        </form>
+    
 </div>
