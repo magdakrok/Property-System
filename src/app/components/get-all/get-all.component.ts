@@ -12,7 +12,7 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./get-all.component.css']
 })
 export class GetAllComponent implements OnInit {
-  offer: Offer[] = [];
+  offer: Offer[];
   constructor(private connectionService: ConnestionService, private messageService:  MessageService ) { }
 
   ngOnInit() {
@@ -26,6 +26,8 @@ export class GetAllComponent implements OnInit {
         console.log(res);
         
       this.offer = res;
+
+    
        
       
       

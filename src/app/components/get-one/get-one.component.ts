@@ -20,7 +20,7 @@ export class GetOneComponent implements OnInit {
     this.getOfferOne(params.id);
   }
 
-  getOfferOne(id: number) {
+  getOfferOne(id: string) {
     this.connectionService.getOne(id)
       .subscribe((res: Offer[]) => {
        this.offer = res;

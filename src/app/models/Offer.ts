@@ -1,7 +1,7 @@
 
 export interface Offer{
 
-    id: string,
+    id?: string,
     city: string,
     street: string,
     property: string,

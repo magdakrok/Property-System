@@ -14,7 +14,7 @@ export class CreateOfferComponent implements OnInit {
 
 
   offer: Offer = {
-    id: '',
+    id:'',
     city: '',
     street: '',
     property: '',
